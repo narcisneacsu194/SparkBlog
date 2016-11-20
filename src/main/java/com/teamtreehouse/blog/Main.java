@@ -106,7 +106,8 @@ public class Main {
             BlogEntry blogEntry = dao.findEntryBySlug(req.params("slug"));
             blogEntry.setTitle(title);
             blogEntry.setContent(entry);
-            res.redirect("/detail/" + req.params("slug"));
+            blogEntry.setSlug();
+            res.redirect("/detail/" + blogEntry.getSlug());
             return null;
         });
 

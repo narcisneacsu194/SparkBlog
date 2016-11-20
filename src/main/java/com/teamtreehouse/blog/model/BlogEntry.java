@@ -15,20 +15,14 @@ public class BlogEntry {
     private String content;
     private String slug;
     private List<Comment> commentList;
+    private static int slugId = 1;
 
     public BlogEntry(String title, String content){
         this.title = title;
         this.date = getDateTime();
         this.content = content;
         commentList = new ArrayList<>();
-
-        try{
-            Slugify slugify = new Slugify();
-            slug = slugify.slugify(title);
-        }catch(IOException ioe){
-            ioe.printStackTrace();
-        }
-
+        setSlug();
     }
 
     private String getDateTime() {
@@ -39,6 +33,17 @@ public class BlogEntry {
 
     public String getSlug() {
         return slug;
+    }
+
+    public void setSlug() {
+        try{
+            Slugify slugify = new Slugify();
+            slug = title + "-slugid-" + slugId;
+            slug = slugify.slugify(slug);
+            slugId++;
+        }catch(IOException ioe){
+            ioe.printStackTrace();
+        }
     }
 
     public List<Comment> getCommentList() {
