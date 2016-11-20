@@ -45,3 +45,17 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+*.class
+build/resources/main/public/css/normalize.css
+build/resources/main/public/css/site.css
+build/resources/main/templates/base.hbs
+build/resources/main/templates/detail.hbs
+build/resources/main/templates/edit.hbs
+build/resources/main/templates/index.hbs
+build/resources/main/templates/new.hbs
+build/resources/main/templates/password.hbs
+.idea/compiler.xml
+.idea/misc.xml
+.idea/modules/SparkBlog_main.iml
+.idea/modules/SparkBlog_test.iml
+.idea/workspace.xml
