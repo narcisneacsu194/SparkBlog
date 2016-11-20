@@ -15,7 +15,6 @@ public class BlogEntry {
     private String content;
     private String slug;
     private List<Comment> commentList;
-    private List<String> tagList;
 
     public BlogEntry(String title, String content){
         this.title = title;
@@ -71,15 +70,4 @@ public class BlogEntry {
         return commentList.add(comment);
     }
 
-    public boolean addTag(String tag){
-        return tagList.add(tag);
-    }
-
-    public List<String> getTagList() {
-        return tagList;
-    }
-
-    public void setTagList(List<String> tagList) {
-        this.tagList = tagList;
-    }
 }
