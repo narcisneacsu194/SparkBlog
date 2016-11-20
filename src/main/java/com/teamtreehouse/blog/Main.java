@@ -82,7 +82,7 @@ public class Main {
             return null;
         });
 
-        post("/carryOutEdit/:slug", (req, res) ->{
+        post("/carry-out-edit/:slug", (req, res) ->{
             String title = req.queryParams("title");
             String entry = req.queryParams("entry");
             BlogEntry blogEntry = dao.findEntryBySlug(req.params("slug"));
@@ -92,7 +92,7 @@ public class Main {
             return null;
         });
 
-        post("/detail/:slug/postComment", (req, res) ->{
+        post("/detail/:slug/post-comment", (req, res) ->{
             BlogEntry blogEntry = dao.findEntryBySlug(req.params("slug"));
             String name = req.queryParams("name");
             String comment = req.queryParams("comment");
@@ -102,7 +102,7 @@ public class Main {
             return null;
         });
 
-        post("/passwordVerification", (req, res) ->{
+        post("/password-verification", (req, res) ->{
             String password = req.queryParams("password");
             if(password.equals("admin")){
                 res.cookie("password", "admin");
