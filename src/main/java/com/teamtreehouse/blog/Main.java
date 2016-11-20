@@ -85,6 +85,10 @@ public class Main {
         post("/publish", (req, res) ->{
             String title = req.queryParams("title");
             String entry = req.queryParams("entry");
+            if(title.equals("") || entry.equals("")){
+                res.redirect("/new");
+                return null;
+            }
             BlogEntry blogEntry = new BlogEntry(title, entry);
             dao.addEntry(blogEntry);
             res.redirect("/");
@@ -95,6 +99,10 @@ public class Main {
         post("/carry-out-edit/:slug", (req, res) ->{
             String title = req.queryParams("title");
             String entry = req.queryParams("entry");
+            if(title.equals("") || entry.equals("")){
+                res.redirect("/edit/" + req.params("slug"));
+                return null;
+            }
             BlogEntry blogEntry = dao.findEntryBySlug(req.params("slug"));
             blogEntry.setTitle(title);
             blogEntry.setContent(entry);
@@ -107,6 +115,10 @@ public class Main {
             BlogEntry blogEntry = dao.findEntryBySlug(req.params("slug"));
             String name = req.queryParams("name");
             String comment = req.queryParams("comment");
+            if(name.equals("") || comment.equals("")){
+                res.redirect("/detail/" + req.params("slug"));
+                return null;
+            }
             Comment entryComment = new Comment(name, comment);
             blogEntry.addComment(entryComment);
             res.redirect("/detail/" + req.params("slug"));
