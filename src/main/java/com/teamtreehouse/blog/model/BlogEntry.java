@@ -21,7 +21,6 @@ public class BlogEntry {
         this.date = getDateTime();
         this.content = content;
         commentList = new ArrayList<>();
-        tagList = new ArrayList<>();
 
         try{
             Slugify slugify = new Slugify();
