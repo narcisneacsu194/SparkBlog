@@ -1,4 +1,4 @@
-# SparkBlog
+# Spark Blog
 
 This is a simple blog web application using the microframework Spark, and as a template, I used the Handlebars engine.
 
